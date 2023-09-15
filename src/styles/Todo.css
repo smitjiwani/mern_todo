@@ -1,0 +1,46 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, thead {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding-left: 65px ;
+    padding-right: 65px;
+  }
+
+.completed{
+    text-decoration: line-through;
+    color: #dddddd;
+}
+
+.not-completed{
+    text-decoration: none;
+    color: #000000;
+}
+
+.btn__completed{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+}
+.btn__notCompleted{
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.btn__delete{
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+}
+
