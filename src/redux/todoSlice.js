@@ -3,14 +3,14 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
-    const response = await fetch("http://localhost:5000/todos");
+    const response = await fetch("https://mern-backend-pptc.onrender.com/todos");
     const data = await response.json();
     return data;
 });
 
 export const addTodo = createAsyncThunk("todos/addTodo", async (text) => {
     try {
-        const response = await axios.post("http://localhost:5000/todos", text)
+        const response = await axios.post("https://mern-backend-pptc.onrender.com/todos", text)
         return response.data;
     } catch (err) {
         console.log(err);
@@ -18,7 +18,7 @@ export const addTodo = createAsyncThunk("todos/addTodo", async (text) => {
 });
 
 export const completeTodo = createAsyncThunk("todos/completeTodo", async (id) => {
-    const response = await fetch(`http://localhost:5000/todos/${id}`, {
+    const response = await fetch(`https://mern-backend-pptc.onrender.com/todos/${id}`, {
         method: "PATCH"
     });
     const data = await response.json();
@@ -27,7 +27,7 @@ export const completeTodo = createAsyncThunk("todos/completeTodo", async (id) =>
 
 export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (id) => {
     try {
-        const response = await axios.delete(`http://localhost:5000/todos/${id}`).then((res) => {
+        const response = await axios.delete(`https://mern-backend-pptc.onrender.com/todos/${id}`).then((res) => {
             console.log(res.data);
         });
         return response.data;
@@ -37,7 +37,7 @@ export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (id) => {
 });
 
 export const updateTodo = createAsyncThunk("todos/updateTodo", async (id, text) => {
-    const response = await fetch(`http://localhost:5000/todos/${id}`, {
+    const response = await fetch(`https://mern-backend-pptc.onrender.com/todos/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
